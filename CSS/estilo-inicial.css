@@ -40,7 +40,14 @@ section {
     list-style: none;
     flex-wrap: wrap;
     text-align: center;
+    padding: 0;
+    margin: 0;
 }
+
+.calendar ul.days {
+    margin-bottom: 20px;
+}
+
 .calendar ul li {
     position: relative;
     width: calc(100%/7);
@@ -60,8 +67,24 @@ section {
     color: #fff
 }
 
-.icons span {
+.icons i {
+    height: 38px;
+    width: 38px;
+    color: #878787;
+    font-size: 1.5rem;
+    margin: 0 1px;
+    text-align: center;
+    line-height: 38px;
+    cursor: pointer;
+    border-radius: 50%;
+}
 
+.icons  i:hover {
+    background: #f2f2f2;
+}
+
+.icons  i:last-child {
+    margin-right: -10px;
 }
 
 .days li:hover::before {
@@ -69,7 +92,7 @@ section {
 }
 
 .days li.active::before {
-    background: #9B59B6;
+    background: rgb(4, 128, 4);
 }
 
 .calendar .days li::before {
