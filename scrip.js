@@ -36,7 +36,7 @@ renderCalendar();
 
 prevNextIcon.forEach(icon => {
     icon.addEventListener("click", () => {
-        currMonth = icon.class === "bi bi-arrow-left-short" ? currMonth - 1 : currMonth + 1;
+        currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
 
         if(currMonth < 0 || currMonth > 11) {
             date = new Date (currYear, currMonth);

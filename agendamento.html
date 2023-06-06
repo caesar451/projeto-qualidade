@@ -34,10 +34,9 @@
 
 </header>
 
-<main class="container-fluid">
-    <div class="main-container m-lg-1 row g-2 justify-content-lg-start">
-
-        <section class="container-fluid bg-success-subtle col-md-4 p-4 pb-5">
+<main class="g-1 d-flex justify-content-center">
+    <div class="col-8 d-flex main-container justify-content-center g-2 bg-light border border-2 border-success-subtle rounded-4 column-gap-3">
+        <section class=" col-md-6 p-4 pb-5 border-end border-2 border-success-subtle">
             <form action="." method="." class="row g-3">
                 <legend>Dados do Paciente</legend>
                 <div class="col-12">
@@ -107,14 +106,23 @@
         </section>
 
 
-        <section class="container-fluid  row col-md-8 d-flex align-items-center border border-1 border-black">
-            <div class="calendar bg-light text-center col-md-5 p-1 m-1">
-                <p class="current-date"></p>
-                <div class="icons">
-                    <i class="bi bi-arrow-left-short"></i>
-                    <i class="bi bi-arrow-right-short"></i>
+        <section class="col-md-6 align-items-center border-start border-2 border-success-subtle">
+            <h3 class="p-4 fw-normal">Calendário</h3>
+            <div class="m-4 w-auto h-auto calendar bg-success text-center col-md-5 p-1 m-1">
+                <div class="d-flex m-4 align-content-center justify-content-between">
+                    <p class="current-date text-light fs-4"></p>
+                    <div class="icons">
+                        <span id="prev">
+                            <i class="bi bi-chevron-left m-1"></i>
+                        </span>
+                        <span id="next">
+                            <i id="next" class="bi bi-chevron-right m-1">
+                            </i>
+                        </span>
                 </div>
-                <ul class="weeks">
+                
+                </div>
+                <ul class="weeks text-light mx-4">
                     <li>Dom</li>
                     <li>Seg</li>
                     <li>Ter</li>
@@ -123,26 +131,18 @@
                     <li>Sex</li>
                     <li>Sab</li>
                 </ul>
-                <ul class="days d-flex flex-wrap">
+                <ul class="days d-flex flex-wrap bg-light rounded-4 p-3 m-2">
                 </ul>
             </div>
 
-            <div class="container-fluid col-md-6 bg-success-subtle m-1">
-                <h1>Lorem ipsum dolor sit amet</h1>
-                <p>Consectetur adipiscing elit. Pellentesque dignissim purus ac tempor finibus. Curabitur vehicula
-                    semper sollicitudin. Sed ac felis vel nibh vulputate consequat. Cras ligula erat, commodo vitae
-                    interdum eget, faucibus a purus. Nam porttitor nisl vitae fermentum accumsan. Ut turpis arcu,
-                    gravida quis ultricies quis, elementum id lectus. Pellentesque augue orci, dignissim eget nunc in,
-                    porttitor ullamcorper odio. Fusce congue varius lobortis.</p>
-                <h1>Lorem ipsum dolor sit amet</h1>
-                <p>In et odio et turpis convallis interdum eu id mauris. Etiam feugiat lacinia fermentum. Aliquam
-                    sodales lobortis dictum. Curabitur sollicitudin ligula sed arcu ornare, at ullamcorper erat aliquet.
-                    Ut libero ex, suscipit vel accumsan non, viverra et urna. Maecenas volutpat at justo nec iaculis.
-                    Phasellus ut ex est. Fusce at hendrerit enim.
-                </p>
-
-
-            </div>
+            <div class="bg-success h-auto m-4 rounded-4">
+                <h3 class="p-4 fw-normal">Horários Disponíveis</h3>
+                <ul class="schedule d-flex list-unstyled justify-content-evenly">
+                    <li>09:00</li>
+                    <li>13:00</li>
+                    <li>15:00</li>
+                </ul>
+                </div>
 
         </section>
 

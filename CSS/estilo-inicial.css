@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     font-size: 17px;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .time {
@@ -23,16 +23,16 @@
     width: 17%;
 }
 
-section {
-    border-radius: 2%;
-}
-
 .current-date {
 
 }
 
 .calendar {
     border-radius: 5%;
+}
+
+.calendar ul li {
+    font-size: 1.3em;
 }
 
 .calendar ul {
@@ -45,7 +45,7 @@ section {
 }
 
 .calendar ul.days {
-    margin-bottom: 20px;
+    margin: 5px;
 }
 
 .calendar ul li {
@@ -56,7 +56,11 @@ section {
 .days li {
     z-index: 1;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 15px;
+}
+
+.days li:nth-child(n+1):nth-child(-n+7){
+    margin-top: 0px;
 }
 
 .days li.inactive { 
@@ -70,9 +74,10 @@ section {
 .icons i {
     height: 38px;
     width: 38px;
-    color: #878787;
-    font-size: 1.5rem;
-    margin: 0 1px;
+    color: white;
+    font-size: 1.4rem;
+    margin: 0px 1px;
+    padding: 0 3px;
     text-align: center;
     line-height: 38px;
     cursor: pointer;
@@ -80,7 +85,8 @@ section {
 }
 
 .icons  i:hover {
-    background: #f2f2f2;
+    background: white;
+    color: rgb(4, 128, 4);;
 }
 
 .icons  i:last-child {
@@ -105,4 +111,8 @@ section {
     z-index: -1;
     border-radius: 50%;
     transform: translate(-50%, -50%);
+}
+
+ul.schedule li {
+    margin: 0 15px 5px 15px;
 }
