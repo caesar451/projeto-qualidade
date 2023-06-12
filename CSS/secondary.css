@@ -12,6 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .left-login {
@@ -23,7 +24,8 @@ body {
     flex-direction: column;
 }
 
-.left-login > h1 {
+.left-login > h1,
+.main-login > h1 {
     color: #1c8455;
 }   
 
@@ -37,7 +39,7 @@ body {
 }
 
 .card-login {
-    width: 60%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,6 +104,7 @@ form {
 }
 
 a {
+    color: rgb(6, 6, 175);
     text-decoration: none;
     margin: 5px;
 }

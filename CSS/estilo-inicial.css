@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 13px;
+    font-size: 16px;
     /* box-sizing: border-box; */
 }
 
@@ -27,9 +27,7 @@ main {
     width: 17%;
 }
 
-.current-date {
-
-}
+.current-date {}
 
 .calendar {
     border-radius: 5%;
@@ -63,11 +61,11 @@ main {
     margin-top: 15px;
 }
 
-.days li:nth-child(n+1):nth-child(-n+7){
+.days li:nth-child(n+1):nth-child(-n+7) {
     margin-top: 0px;
 }
 
-.days li.inactive { 
+.days li.inactive {
     color: #aaa;
 }
 
@@ -94,12 +92,13 @@ main {
     border-radius: 50%;
 }
 
-.icons  i:hover {
+.icons i:hover {
     background: white;
-    color: rgb(4, 128, 4);;
+    color: rgb(4, 128, 4);
+    ;
 }
 
-.icons  i:last-child {
+.icons i:last-child {
     margin-right: -10px;
 }
 
@@ -123,6 +122,17 @@ main {
     transform: translate(-50%, -50%);
 }
 
+tbody td,
+.pointer {
+    cursor: pointer;
+}
+
 ul.schedule li {
     margin: 0 15px 5px 15px;
+}
+
+@media only screen and (max-width: 950px) {
+    * {
+        font-size: 14px;
+    }
 }
