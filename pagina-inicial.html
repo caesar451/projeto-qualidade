@@ -12,8 +12,9 @@
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./CSS/estilo-inicial.css">
-    <link rel="script" href="pagina-inicial.js">
+    <link rel="script" href="scrip.js">
 </head>
+<body>
 
 <header class="container-fluid p-2 bg-success-subtle mb-5">
     <nav class="navbar navbar-expand-lg bg-tertiary">
@@ -61,94 +62,18 @@
                         <td>Sim</td>
                     </tr>
                     <tr>
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
-                    </tr>
-                    <tr data-bs-toggle="modal" data-bs-target="#myModal">
-                        <td>08:30</td>
-                        <td>Neo</td>
-                        <td>Sim</td>
-                        <td>Sim</td>
+                        <td>
+                            <!-- <p>cell 2 in row 2</p> -->
+                            <!-- Nested table -->
+                            <table class="table">
+                                <th>
+                                    <p class="current-fulldate">teste</p>
+                                </th>
+                                <tr>
+                                    <td>table 2</td>
+                                </tr>
+                            </table>
+                        </td>
                     </tr>
                     <tr data-bs-toggle="modal" data-bs-target="#myModal">
                         <td>08:30</td>
@@ -174,13 +99,14 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <h5 class="modal-title" id="exampleModalLabel">Detalhes do Paciente</h5>
-                    </div>
-                    <section class="col-md p-4">
-                        <form action="." method="." class="row g-2">
-                            <legend class="pointer border-bottom border-1 border-success" data-bs-toggle="collapse" href="patientData" data-bs-toggle="collapse" data-bs-target="#patientData" aria-expanded="false"
-                            aria-controls="patientData">Dados do Paciente</legend>
-                            <section class="collapse-horizontal" id="patientData">
-                                <div class="col">
+                </div>
+                <section class="col-md p-4">
+                    <form action="." method="." class="row g-2">
+                        <legend class="pointer border-bottom border-1 border-success" data-bs-toggle="collapse"
+                            href="patientData" data-bs-toggle="collapse" data-bs-target="#patientData"
+                            aria-expanded="false" aria-controls="patientData">Dados do Paciente</legend>
+                        <section class="collapse-horizontal" id="patientData">
+                            <div class="col">
                                 <label for="fName" class="form-label">Nome</label>
                                 <input type="text" id="fName" name="nome" class="form-control"
                                     placeholder="Nome do Paciente" required>
@@ -226,50 +152,48 @@
                                 <label for="fEmail" class="form-label">E-mail</label>
                                 <input type="text" id="fEmail" name="e-mail" class="form-control" placeholder="E-mail"
                                     required>
-                            </div></section>
-                            
-
-
-
-                            <div class="col-md-6">
-                                <label for="fDate" class="form-label">Data de Consulta</label>
-                                <input type="date" id="fDate" name="dataConsulta" class="form-control"
-                                    placeholder="dd/mm/aaaa" required>
                             </div>
-
-                            <div class="col-md-6">
-                                <label for="fDoc" class="form-label">Horário de Consulta</label>
-                                <select id="fDoc" class="form-select" required>
-                                    <option value="CPF" selected>15:00</option>
-                                    <option value="CNPJ">16:00</option>
-                                </select>
-                            </div>
-
-                            <div class="text-center p-3"><button type="submit" class="btn btn-success w-50">Marcar
-                                    Consulta</button>
-                            </div>
+                        </section>
 
 
-                        </form>
-                    </section>
 
-                </div>
-                <div class="modal-body">
-                    <!-- Conteúdo do modal -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Salvar</button>
-                </div>
+
+                        <div class="col-md-6">
+                            <label for="fDate" class="form-label">Data de Consulta</label>
+                            <input type="date" id="fDate" name="dataConsulta" class="form-control"
+                                placeholder="dd/mm/aaaa" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="fDoc" class="form-label">Horário de Consulta</label>
+                            <select id="fDoc" class="form-select" required>
+                                <option value="CPF" selected>15:00</option>
+                                <option value="CNPJ">16:00</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center p-3"><button type="submit" class="btn btn-success w-50">Marcar
+                                Consulta</button>
+                        </div>
+
+
+                    </form>
+                </section>
+
+            </div>
+            <div class="modal-body">
+                <!-- Conteúdo do modal -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Salvar</button>
             </div>
         </div>
+    </div>
     </div>
 
 
 </main>
-
-
-<body>
 
 </body>
 

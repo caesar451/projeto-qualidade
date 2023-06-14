@@ -1,8 +1,10 @@
 const currentDate = document.querySelector(".current-date"),
+    currentFullDate = document.querySelector(".current-fulldate"),
     daysTag = document.querySelector(".days"),
     prevNextIcon = document.querySelectorAll(".icons span");
-
+    
 let date = new Date(),
+    currDay = date.getDay();
     currYear = date.getFullYear(),
     currMonth = date.getMonth();
 
@@ -38,8 +40,8 @@ prevNextIcon.forEach(icon => {
     icon.addEventListener("click", () => {
         currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
 
-        if(currMonth < 0 || currMonth > 11) {
-            date = new Date (currYear, currMonth);
+        if (currMonth < 0 || currMonth > 11) {
+            date = new Date(currYear, currMonth);
             currYear = date.getFullYear();
             currMonth = date.getMonth();
         } else {
@@ -48,3 +50,8 @@ prevNextIcon.forEach(icon => {
         renderCalendar();
     });
 });
+
+const appointmentCalendar = () => {
+    currentFullDate.innerText = `${currDay}-${months[currMonth]}-${currYear}`;
+    console.log(currentFullDate);
+}

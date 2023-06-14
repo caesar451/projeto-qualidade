@@ -28,6 +28,7 @@ main {
 }
 
 .current-date {}
+.current-fulldate {}
 
 .calendar {
     border-radius: 5%;

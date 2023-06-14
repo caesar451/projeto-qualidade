@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infocus - Tela Inicial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./CSS/estilo-inicial.css">
+    <link rel="script" href="scrip.js">
+</head>
+
+<body>
+
+    <header class="container-fluid p-2 bg-success-subtle mb-5">
+        <nav class="navbar navbar-expand-lg bg-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">InFocus</a>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="pagina-inicial.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="agendamento.html">Agendamento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="prontuarios.html">Prontuário</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main class="d-flex justify-content-center container-fluid">
+        <div class="container bg-light border border-2 border-success-subtle rounded-4">
+            <h1>Lista de Pacientes</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th class="w-50">Nome</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="pacientes-list">
+                    <!-- A lista de pacientes será preenchida dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            role="dialog">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header d-flex flex-column">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title justify-content-center d-flex" id="exampleModalLabel">Detalhes do
+                            Paciente</h5>
+                    </div>
+                    <div class="modal-body p-1">
+                        <section class="p-1 px-3">
+                            <form action="." method="." class="">
+                                <legend class="pointer border-bottom border-1 border-success" data-bs-toggle="collapse"
+                                    href="patientData" data-bs-toggle="collapse" data-bs-target="#patientData"
+                                    aria-expanded="false" aria-controls="patientData">Dados do Paciente</legend>
+                                <section class="collapse-vertical row input-group" id="patientData">
+                                    <input type="hidden" id="fId">
+                                    <div class="col-12">
+                                        <label for="fPacienteNome" class="form-label">Nome</label>
+                                        <input type="text" id="fPacienteNome" name="nome" class="form-control"
+                                            placeholder="Nome do Paciente" required>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="fSex" class="form-label">Sexo</label>
+                                        <select name="sexo" id="fSex" class="form-select" required>
+                                            <option value="Feminino">Feminino</option>
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Indefinido" selected>Indefinido</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="fbdate" class="form-label">Data de Nascimento</label>
+                                        <input type="date" id="fbdate" name="nascimento" class="form-control"
+                                            placeholder="dd/mm/aaaa" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="fPhone" class="form-label">Telefone</label>
+                                        <input type="text" id="fPhone" name="telefone" class="form-control"
+                                            placeholder="(00) 0000-0000" required>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="fDoc" class="form-label">Documento</label>
+                                        <select id="fDoc" class="form-select" required>
+                                            <option value="CPF" selected>CPF</option>
+                                            <option value="CNPJ">CNPJ</option>
+                                        </select>
+
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <label for="fCpf" class="form-label">Nº do Documento</label>
+                                        <input type="text" id="fCpf" name="documento" class="form-control" required>
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <label for="fEmail" class="form-label">E-mail</label>
+                                        <input type="text" id="fEmail" name="e-mail" class="form-control"
+                                            placeholder="E-mail" required>
+                                    </div>
+                                </section>
+
+                                <legend class="pointer border-bottom border-1 border-success mt-1"
+                                    data-bs-toggle="collapse" href="patientData2" data-bs-toggle="collapse"
+                                    data-bs-target="#patientData2" aria-expanded="false" aria-controls="patientData">
+                                    Histórico Médico</legend>
+                                <section class="collapse-vertical row" id="patientData2">
+
+                                    <div class="col-12">
+                                        <label for="" class="form-label">Exames</label>
+                                        <textarea type="text" rows="5" class="form-control flex-wrap"
+                                            placeholder="Doenças prévias, condições médicas crônicas, cirurgias anteriores, histórico familiar de doenças, alergias conhecidas, uso de medicamentos e tratamentos anteriores."></textarea>
+                                    </div>
+
+                                    <!-- <div>
+                                        <label for="" class="form-label"></label>
+                                        <input type="text" class="form-control">
+                                    </div> -->
+
+
+
+
+
+
+
+                            </form>
+                        </section>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Modal para edição -->
+        <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editarModalLabel">Editar Paciente</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Formulário de edição
+                        <form id="editarForm">
+                            <input type="hidden" id="editarId">
+                            <div class="form-group">
+                                <label for="editarNome">Nome:</label>
+                                <input type="text" class="form-control" id="editarNome" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Array simulando os pacientes (você deve substituir essa lógica com os dados do seu banco de dados)
+        const pacientes = [
+            { id: 1, nome: "Paciente 1", telefone: "1111-1111", email: "123@gmail.com" },
+            { id: 2, nome: "Paciente 2", telefone: "2222-2222", email: "123@gmail.com" },
+            { id: 3, nome: "Paciente 3", telefone: "3333-3333", email: "123@gmail.com" }
+        ];
+
+        // Função para preencher a tabela com a lista de pacientes
+        function preencherTabela() {
+            const tbody = document.getElementById("pacientes-list");
+
+            pacientes.forEach(paciente => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+          <td>${paciente.id}</td>
+          <td>${paciente.nome}</td>
+          <td>${paciente.telefone}</td>
+          <td>${paciente.email}</td>
+          <td>
+            <button class="btn btn-primary btn-editar" data-id="${paciente.id}" data-nome="${paciente.nome}">
+              Editar
+            </button>
+            <button class="btn btn-danger btn-excluir" data-id="${paciente.id}">
+              Excluir
+            </button>
+          </td>
+        `;
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Função para abrir o modal de edição com os dados do paciente
+        function abrirModalEdicao(id, nome) {
+            document.getElementById("fId").value = id;
+            document.getElementById("fPacienteNome").value = nome;
+            $("#myModal").modal("show");
+        }
+
+        // Função para atualizar o paciente após a edição
+        function atualizarPaciente(id, nome) {
+            const paciente = pacientes.find(p => p.id === id);
+            if (paciente) {
+                paciente.nome = nome;
+                preencherTabela();
+            }
+        }
+
+        // Função para excluir o paciente
+        function excluirPaciente(id) {
+            const pacienteIndex = pacientes.findIndex(p => p.id === id);
+            if (pacienteIndex !== -1) {
+                pacientes.splice(pacienteIndex, 1);
+                preencherTabela();
+            }
+        }
+
+        // Evento de clique no botão de edição
+        document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("btn-editar")) {
+                const id = parseInt(event.target.getAttribute("data-id"));
+                const nome = event.target.getAttribute("data-nome");
+                abrirModalEdicao(id, nome);
+            }
+        });
+
+        // Evento de envio do formulário de edição
+        document.getElementById("editarForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const id = parseInt(document.getElementById("fId").value);
+            const nome = document.getElementById("fPacienteNome").value;
+            atualizarPaciente(id, nome);
+            $("#myModal").modal("hide");
+        });
+
+        // Evento de clique no botão de exclusão
+        document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("btn-excluir")) {
+                const id = parseInt(event.target.getAttribute("data-id"));
+                excluirPaciente(id);
+            }
+        });
+
+        // Preencher a tabela ao carregar a página
+        window.addEventListener("load", preencherTabela);
+    </script>
+</body>
+
+</html>
