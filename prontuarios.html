@@ -149,57 +149,29 @@
 
 
 
-                           
-                        </section>
+
+                                </section>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         <button type="button submit" class="btn btn-primary">Salvar</button>
-                    </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- Modal para edição -->
-        <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editarModalLabel">Editar Paciente</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Formulário de edição
-                        <form id="editarForm">
-                            <input type="hidden" id="editarId">
-                            <div class="form-group">
-                                <label for="editarNome">Nome:</label>
-                                <input type="text" class="form-control" id="editarNome" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Salvar</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+
     </main>
 
     <script>
-        // Array simulando os pacientes (você deve substituir essa lógica com os dados do seu banco de dados)
+
         const pacientes = [
             { id: 1, nome: "Paciente 1", telefone: "1111-1111", email: "123@gmail.com" },
             { id: 2, nome: "Paciente 2", telefone: "2222-2222", email: "123@gmail.com" },
             { id: 3, nome: "Paciente 3", telefone: "3333-3333", email: "123@gmail.com" }
         ];
 
-        // Função para preencher a tabela com a lista de pacientes
         function preencherTabela() {
             const tbody = document.getElementById("pacientes-list");
 
@@ -224,14 +196,12 @@
             });
         }
 
-        // Função para abrir o modal de edição com os dados do paciente
         function abrirModalEdicao(id, nome) {
             document.getElementById("fId").value = id;
             document.getElementById("fPacienteNome").value = nome;
             $("#myModal").modal("show");
         }
 
-        // Função para atualizar o paciente após a edição
         function atualizarPaciente(id, nome) {
             const paciente = pacientes.find(p => p.id === id);
             if (paciente) {
@@ -240,7 +210,6 @@
             }
         }
 
-        // Função para excluir o paciente
         function excluirPaciente(id) {
             const pacienteIndex = pacientes.findIndex(p => p.id === id);
             if (pacienteIndex !== -1) {
@@ -249,7 +218,6 @@
             }
         }
 
-        // Evento de clique no botão de edição
         document.addEventListener("click", function (event) {
             if (event.target.classList.contains("btn-editar")) {
                 const id = parseInt(event.target.getAttribute("data-id"));
@@ -258,8 +226,7 @@
             }
         });
 
-        // Evento de envio do formulário de edição
-        document.getElementById("editarForm").addEventListener("submit", function (event) {
+        document.getElementById("myModal").addEventListener("submit", function (event) {
             event.preventDefault();
             const id = parseInt(document.getElementById("fId").value);
             const nome = document.getElementById("fPacienteNome").value;
@@ -267,7 +234,6 @@
             $("#myModal").modal("hide");
         });
 
-        // Evento de clique no botão de exclusão
         document.addEventListener("click", function (event) {
             if (event.target.classList.contains("btn-excluir")) {
                 const id = parseInt(event.target.getAttribute("data-id"));
@@ -275,7 +241,6 @@
             }
         });
 
-        // Preencher a tabela ao carregar a página
         window.addEventListener("load", preencherTabela);
     </script>
 </body>
