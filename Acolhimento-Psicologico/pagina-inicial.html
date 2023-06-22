@@ -171,13 +171,13 @@
             }
         }
 
-        function excluirConsulta(id) {
-            const index = agendamento.findIndex(p => p.id === id);
-            if (index !== -1) {
-                agendamento.splice(index, 1);
-                preencherTabela();
-            }
-        }
+        // function excluirConsulta(id) {
+        //     const index = agendamento.findIndex(p => p.id === id);
+        //     if (index !== -1) {
+        //         agendamento.splice(index, 1);
+        //         preencherTabela();
+        //     }
+        // }
 
         document.addEventListener("click", function (event) {
             if (event.target.classList.contains("btn-editar")) {

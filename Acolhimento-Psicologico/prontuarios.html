@@ -195,13 +195,13 @@
             }
         }
 
-        function excluirPaciente(id) {
-            const pacienteIndex = pacientes.findIndex(p => p.id === id);
-            if (pacienteIndex !== -1) {
-                pacientes.splice(pacienteIndex, 1);
-                preencherTabela();
-            }
-        }
+        // function excluirPaciente(id) {
+        //     const pacienteIndex = pacientes.findIndex(p => p.id === id);
+        //     if (pacienteIndex !== -1) {
+        //         pacientes.splice(pacienteIndex, 1);
+        //         preencherTabela();
+        //     }
+        // }
 
         document.addEventListener("click", function (event) {
             if (event.target.classList.contains("btn-editar")) {
